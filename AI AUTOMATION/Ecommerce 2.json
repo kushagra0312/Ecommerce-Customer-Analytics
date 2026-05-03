@@ -1,0 +1,72 @@
+{
+  "name": "Ecommerce 2",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "query"
+            }
+          ]
+        }
+      },
+      "id": "c055762a-8fe7-4141-a639-df2372f30060",
+      "typeVersion": 1.1,
+      "name": "When Executed by Another Workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        272,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "{{ $json.query }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        480,
+        352
+      ],
+      "id": "9b887237-69fe-45c2-b8f4-b919409469c5",
+      "name": "Execute a SQL query",
+      "credentials": {
+        "postgres": {
+          "id": "vk59TJfbqptOrZKA",
+          "name": "Postgres account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "2c09e3c6-94a9-49b7-be56-01dcd44a1205",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "99f833ad2f1f6d2fe30529bb78b4f12388edb2b46dd5b65b5ffd46167420497b"
+  },
+  "id": "yuwSOBqkoOjjrIRj",
+  "tags": []
+}
